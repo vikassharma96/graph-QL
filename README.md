@@ -34,7 +34,7 @@
 
 ```
 {
-    allPersons(last: 2) {
+    allUsers(last: 2) {
         name
     }
 }
@@ -44,7 +44,7 @@
 
 ```
 {
-    "allPersons" : [
+    "allUsers" : [
         {"name" : "Vikas"},
         {"name" : "Teckudos"}
     ]
@@ -86,3 +86,33 @@ subscription {
 ```
 
 `Whenever Mutations changes something Subscription act on it`
+
+### Schema
+
+- Define root
+  - Query
+  - Mutation
+  - Subscription
+- Define Payload/Data
+
+```
+type Query {
+    allUsers(last: int): [Person!]!
+}
+type Mutation {
+    createUser(name: String!, age: Int!): Person!
+}
+type Subscription {
+    newUser: Person!
+}
+type User {
+    id: Int!
+    name: String!
+    age: Int!
+    posts: [Post!]!
+}
+type Post {
+    title: String!
+    author: Person!
+}
+```
