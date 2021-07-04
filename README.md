@@ -13,10 +13,12 @@
 </details>
 
 #### Flow
+
 - Static View -> Query -(Server)-> Data -(Store)-> Views
 - Flow will be handled by GraphQl Client
 
 #### GraphQL Client (Relay/Apollo)
+
 - Fetching through REST
   - Construct and send http request
   - Receive and parse response
@@ -26,7 +28,8 @@
   - Declare the data
   - Display the data in UI
 
-### Queries 
+### Queries
+
 - [x] <b>Read[GET]</b>
 
 ```
@@ -51,9 +54,11 @@
 - [x] <b>Mutations[WRITE]</b>
 
 ```
-{
-    allPersons(last: 2) {
+mutation {
+    createUser(id: "1", name:"Vikas", age: "25") {
+        id
         name
+        age
     }
 }
 ```
@@ -61,11 +66,23 @@
 `Response`
 
 ```
-{
-    "allPersons" : [
-        {"name" : "Vikas"},
-        {"name" : "Teckudos"}
-    ]
+"createUser": {
+    "id": 1,
+    "name": "Vikas",
+    "age": "25",
 }
 ```
 
+- [x] <b>Subscription</b>
+
+```
+subscription {
+    newUser {
+        id
+        name
+        age
+    }
+}
+```
+
+`Whenever Mutations changes something Subscription act on it`
