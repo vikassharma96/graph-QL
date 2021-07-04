@@ -12,7 +12,22 @@
     REST APIs have shown to be too inflexible to keep up with the rapidly changing requirements on the clients that access them
 </details>
 
-#### Queries [GET]
+#### Flow
+- Static View -> Query -(Server)-> Data -(Store)-> Views
+- Flow will be handled by GraphQl Client
+
+#### GraphQL Client (Relay/Apollo)
+- Fetching through REST
+  - Construct and send http request
+  - Receive and parse response
+  - Store locally
+  - Finally display in UI
+- With GraphQL client
+  - Declare the data
+  - Display the data in UI
+
+### Queries 
+- [x] <b>Read[GET]</b>
 
 ```
 {
@@ -33,17 +48,24 @@
 }
 ```
 
-#### Flow
-- Static View -> Query -(Server)-> Data -(Store)-> Views
-- Flow will be handled by GraphQl Client
+- [x] <b>Mutations[WRITE]</b>
 
-#### GraphQL Client (Relay/Apollo)
-- Fetching through REST
-  - Construct and send http request
-  - Receive and parse response
-  - Store locally
-  - Finally display in UI
-- With GraphQL client
-  - Declare the data
-  - Display the data in UI
+```
+{
+    allPersons(last: 2) {
+        name
+    }
+}
+```
+
+`Response`
+
+```
+{
+    "allPersons" : [
+        {"name" : "Vikas"},
+        {"name" : "Teckudos"}
+    ]
+}
+```
 
