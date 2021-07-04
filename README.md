@@ -32,3 +32,18 @@
     ]
 }
 ```
+
+#### Flow
+- Static View -> Query -(Server)-> Data -(Store)-> Views
+- Flow will be handled by GraphQl Client
+
+#### GraphQL Client (Relay/Apollo)
+- Fetching through REST
+  - Construct and send http request
+  - Receive and parse response
+  - Store locally
+  - Finally display in UI
+- With GraphQL client
+  - Declare the data
+  - Display the data in UI
+
