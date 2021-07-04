@@ -3,3 +3,4 @@
 - New API standard that provides a more efficient, powerful and flexible alternative to REST (Representational State Transfer)
 - GraphQL enables declarative data fetching where a client can specify exactly what data it needs from an API
 - Not a DB based language
+<img src="/images/diagram.png" width="800" height="450" />
