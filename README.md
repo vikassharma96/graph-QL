@@ -12,22 +12,12 @@
     REST APIs have shown to be too inflexible to keep up with the rapidly changing requirements on the clients that access them
 </details>
 
-### Queries [GET]
+#### Queries [GET]
 
 ```
 {
-    allPersons {
+    allPersons(last: 2) {
         name
-    }
-}
-
-{
-    allPersons {
-        name
-        age
-        posts {
-            title
-        }
     }
 }
 ```
